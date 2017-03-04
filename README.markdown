@@ -30,10 +30,12 @@ $ gem install i2c-lcd2004a
 
 ```ruby
 require 'i2c/drivers/lcd'
-display = I2C::Drivers::LCD::Display.new('/dev/i2c-1', 0x27)
+display = I2C::Drivers::LCD::Display.new('/dev/i2c-1', 0x27, rows=20, cols=4)
 display.clear
 display.text('Hello', 0)
 display.text('World', 1)
 display.text('Line3', 2)
 display.text('Line4', 3)
 ```
+
+'rows' and 'cols' options are optional. The default value is 20 and 4.
