@@ -1,7 +1,9 @@
 # LCD I2C driver (1602/2004/..)
 
-This is a Ruby driver for the 2004A/1602 LCD display with I2C adapter(PCF8574T),
+This is a Ruby driver for the 2004A/1602 LCD display with I2C adapter
+(tested with PCF8574T),
 forked from [i2c-ss1602](https://github.com/nerab/i2c-ss1602).
+
 The original i2c-ss1602 was partially ported from [raspi-gpio](https://github.com/paulbarber/raspi-gpio/blob/master/lcd_display.py).
 
 ## Installation
