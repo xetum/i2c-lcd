@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative '../lib/i2c/drivers/ss1602'
+require_relative '../lib/i2c/drivers/lcd'
 
 class MiniTest::Test
   def initialize(name = nil)

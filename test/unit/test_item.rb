@@ -11,7 +11,7 @@ class TestDisplay < MiniTest::Test
     FileUtils.mkdir_p(File.dirname(@io))
     FileUtils.touch(@io)
 
-    @display = I2C::Drivers::SS1602::Display.new(@io, 0x42)
+    @display = I2C::Drivers::LCD::Display.new(@io, 0x42)
   end
 
   def teardown
