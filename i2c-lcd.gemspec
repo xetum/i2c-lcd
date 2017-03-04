@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'i2c/drivers/ss1602/version'
+require 'i2c/drivers/lcd/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'i2c-ss1602'
-  spec.version       = I2C::Drivers::SS1602::VERSION
-  spec.authors       = ['Nicholas E. Rabenau']
-  spec.email         = ['nerab@gmx.at']
-  spec.description   = %q{Ruby driver for the SainSmart 1602 LCD display with I2C adapter}
-  spec.summary       = %q{Driver for the SainSmart 1602 LCD display}
-  spec.homepage      = 'https://github.com/nerab/i2c-ss1602'
+  spec.name          = 'i2c-lcd'
+  spec.version       = I2C::Drivers::LCD::VERSION
+  spec.authors       = ['Daisuke SUZUKI']
+  spec.email         = ['daisuke.suzuki@gmail.com']
+  spec.description   = %q{Ruby driver for 2004/1602 LCD display with I2C adapter}
+  spec.summary       = %q{Driver for the 2004/1602 LCD display}
+  spec.homepage      = 'https://github.com/daisuke/i2c-lcd'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

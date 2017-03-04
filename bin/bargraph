@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
 $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'i2c/drivers/ss1602'
+require 'i2c/drivers/lcd'
 
-display = I2C::Drivers::SS1602::Display.new('/dev/i2c-1', 0x27)
+display = I2C::Drivers::LCD::Display.new('/dev/i2c-1', 0x27)
 
 x = ARGV[0].to_f
 r = (0..100)

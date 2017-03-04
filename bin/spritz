@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'i2c/drivers/ss1602'
+require 'i2c/drivers/lcd'
 
 trap('INT'){
   exit
@@ -10,7 +10,7 @@ trap('INT'){
 ARGF.binmode
 
 begin
-  display = I2C::Drivers::SS1602::Display.new('/dev/i2c-1', 0x27)
+  display = I2C::Drivers::LCD::Display.new('/dev/i2c-1', 0x27)
 
   ARGF.each do |line|
     line.split.each do |arg|

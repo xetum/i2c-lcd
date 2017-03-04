@@ -1,8 +1,11 @@
-# Changelog for i2c-ss1602
+# Changelog for i2c-lcd2004a
 
-## v0.0.2
+## v0.0.3
+* support LCD 2004A (20x4 I2C LCD display)
+
+## v0.0.2 (i2c-ss1602)
 * Update for Ruby 2.3
 * First release as Rubygem
 
-## v0.0.1
+## v0.0.1 (i2c-ss1602)
 * Initial revision

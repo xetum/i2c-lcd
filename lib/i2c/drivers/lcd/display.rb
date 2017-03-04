@@ -2,26 +2,27 @@ require 'i2c'
 
 module I2C
   module Drivers
-    module SS1602
+    module LCD
       #
-      # Driver class for the SainSmart 1602 I2C LCD Display.
+      # Driver class for the 2004/1602 I2C LCD Display.
+      #   forked from https://github.com/nerab/i2c-ss1602
       #
       # see https://github.com/andec/i2c
-      #
       # Parts copied from https://github.com/paulbarber/raspi-gpio/blob/master/lcd_display.py
       #
       class Display
         attr_reader :rows, :cols, :cursor
 
-        def initialize(bus_or_bus_name, device_address)
+        def initialize(bus_or_bus_name, device_address, cols=20, rows=4, dotsize=8)
           if bus_or_bus_name.respond_to?(:write)
             @device = BusDevice.new(bus_or_bus_name, device_address)
           else
             @device = BusDevice.new(I2C.create(bus_or_bus_name), device_address)
           end
 
-          @rows = 2
-          @cols = 16
+          @cols = cols
+          @rows = rows
+	  @dotsize = dotsize
 
           init_sequence
 
@@ -36,9 +37,13 @@ module I2C
         def text(string, row, pad = false)
           case row
           when 0
-            write(0x80)
+            write(LCD_LINE_0)
           when 1
-            write(0xC0)
+            write(LCD_LINE_1)
+          when 2
+            write(LCD_LINE_2)
+          when 3
+            write(LCD_LINE_3)
           else
             raise "Only rows #{0..(@rows - 1)} are supported"
           end
@@ -110,6 +115,12 @@ module I2C
         # flags for backlight control
         FLAG_BACKLIGHT   = 0x08
         FLAG_NOBACKLIGHT = 0x00
+	
+	# lcd ram address
+	LCD_LINE_0 = 0x80
+	LCD_LINE_1 = 0xC0
+	LCD_LINE_2 = 0x94
+	LCD_LINE_3 = 0xD4
 
         BIT_EN = 0b00000100 # Enable bit
         BIT_RW = 0b00000010 # Read/Write bit

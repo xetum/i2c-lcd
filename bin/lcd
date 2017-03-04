@@ -3,11 +3,11 @@
 #
 # Sample use:
 #
-# TZ='Europe/Berlin' date "+%d.%m.%Y      %H:%M Uhr   24'C" | bin/ss1602
+# TZ='Europe/Berlin' date "+%d.%m.%Y      %H:%M Uhr   24'C" | bin/lcd2004a
 #
 
 $:.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'i2c/drivers/ss1602'
+require 'i2c/drivers/lcd'
 
 trap('INT'){
   exit
@@ -16,7 +16,7 @@ trap('INT'){
 ARGF.binmode
 txt = ARGF.read
 
-d = I2C::Drivers::SS1602::Display.new('/dev/i2c-1', 0x27)
+d = I2C::Drivers::LCD::Display.new('/dev/i2c-1', 0x27)
 
 # Spread text over lines
 (0..(d.rows - 1)).each do |row|
