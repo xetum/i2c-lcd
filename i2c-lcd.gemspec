@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['daisuke.suzuki@gmail.com']
   spec.description   = %q{Ruby driver for 2004/1602 LCD display with I2C adapter}
   spec.summary       = %q{Driver for the 2004/1602 LCD display}
-  spec.homepage      = 'https://github.com/daisuke/i2c-lcd'
+  spec.homepage      = 'https://github.com/daisukesuzuki/i2c-lcd'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
