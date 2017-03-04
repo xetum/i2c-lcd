@@ -23,7 +23,7 @@ $ bundle
 Or install it yourself as:
 
 ```
-$ gem install i2c-lcd2004a
+$ gem install i2c-lcd
 ```
 
 ## Usage
