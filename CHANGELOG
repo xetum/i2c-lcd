@@ -1,4 +1,4 @@
-# Changelog for i2c-lcd2004a
+# Changelog for i2c-lcd
 
 ## v0.0.3
 * support LCD 2004A (20x4 I2C LCD display)
