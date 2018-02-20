@@ -65,11 +65,11 @@ module I2C
         end
 	      
 	def backlight_on
-	  display.device.write(FLAG_BACKLIGHT)
+	  device.write(FLAG_BACKLIGHT)
 	end
 	
    	def backlight_off
-	  display.device.write(FLAG_NOBACKLIGHT)
+	  device.write(FLAG_NOBACKLIGHT)
 	end
 
         #
