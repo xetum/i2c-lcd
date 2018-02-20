@@ -11,7 +11,7 @@ module I2C
       # Parts copied from https://github.com/paulbarber/raspi-gpio/blob/master/lcd_display.py
       #
       class Display
-        attr_reader :rows, :cols, :cursor
+        attr_reader :rows, :cols, :cursor, :device
 
         def initialize(bus_or_bus_name, device_address, cols=20, rows=4, dotsize=8)
           if bus_or_bus_name.respond_to?(:write)
@@ -63,6 +63,14 @@ module I2C
         def off
           write(COMMAND_DISPLAYCONTROL | FLAG_DISPLAYOFF)
         end
+	      
+	def backlight_on
+	  display.device.write(FLAG_BACKLIGHT)
+	end
+	
+   	def backlight_off
+	  display.device.write(FLAG_NOBACKLIGHT)
+	end
 
         #
         # Send a low-level command to the display
