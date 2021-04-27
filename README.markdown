@@ -1,5 +1,9 @@
 # LCD I2C driver (1602/2004/..)
 
+Forked from daisukesuzuki/i2c-lcd for the sole purpose of publishing to
+[rubygems](https://rubygems.org/gems/i2c-lcd). No development planned
+in this fork.
+
 This is a Ruby driver for the 2004A/1602 LCD display with I2C adapter
 (tested with PCF8574T),
 forked from [i2c-ss1602](https://github.com/nerab/i2c-ss1602).
