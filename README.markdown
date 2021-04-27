@@ -1,6 +1,6 @@
 # LCD I2C driver (1602/2004/..)
 
-Forked from daisukesuzuki/i2c-lcd for the sole purpose of publishing to
+Forked from [daisukesuzuki/i2c-lcd](https://github.com/daisukesuzuki/i2c-lcd) for the sole purpose of publishing to
 [rubygems](https://rubygems.org/gems/i2c-lcd). No development planned
 in this fork.
 
